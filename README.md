@@ -5,6 +5,7 @@ Also credits to Disney KPCN project.
 
 
 # model weights
+**weights** dir can be downloaded from [googledrive](https://drive.google.com/open?id=1ql_ti30l4UUcLv3W_ooAp1WXpR5ibJZC)
 We provide two set of model weights. 
 "./experiment/kjl/models/opt_XX.pth" is trained from KJL large indoor room datasets without seperating Specular and Diffuse components. You can finetune the weigths to your own dataset based on this pretrained weights.
 
@@ -15,14 +16,17 @@ We provide two set of model weights.
 
 
 # data
-This directory provides some sample data on Tungsten scenes.
+**data** dir can be downloaded from [googledrive](https://www.google.com)
+
+This directory provides sample data from some scenes on Tungsten scenes.
 This directory also provides the utility scripts to do data processing, for example, to process EXR files, Tungsten data pre-processing ect..
 
 
 # runscripts
-json files for training/testing
-* Attention!!!   Change the settings in json files to include your own data path and project root
-Specifically, remember to change the "dataroot_NOISY" "dataroot_GT" "root" "val_root" to your paths*
+**script** dir contains json files for training/testing  
+
+**Attention!!!   Change the settings in json files to include your own data path and project root
+Specifically, remember to change the "dataroot_NOISY" "dataroot_GT" "root" "val_root" to your paths**
 
 
 ## to run 
@@ -32,8 +36,6 @@ Specifically, remember to change the "dataroot_NOISY" "dataroot_GT" "root" "val_
 ```
 python train_diffuse.py -opt script/train/train_seperate_denoiser_diffuse.json
 ```
-
-and
 
 ```
 python train_specular.py -opt script/train/train_seperate_denoiser_specular.json
@@ -45,7 +47,6 @@ python train_specular.py -opt script/train/train_seperate_denoiser_specular.json
 python test_diffuse.py -opt script/test/test_seperate_denoiser_diffuse.json
 ```
 
-and
 
 ```
 python test_specular.py -opt script/test/test_seperate_denoiser_specular.json
