@@ -1,0 +1,35 @@
+{
+  "name": "013_seperate_CFM_diffuse_new"
+  , "suffix": "_sep_diffuse"
+  , "image_type": "exr"
+  , "model": "seperate_cfm_gan"
+  , "scale": 4
+  , "gpu_ids": [0]
+
+  , "datasets": {
+       "test": { // the 1st test dataset
+       "name": "tungsten_testset_joint"
+       , "mode": "Tungste_testset_joint"
+       , "feature": ["albedo","normal","depth"]
+       , "dataroot_GT": "../data/new_position_scene_gt/"
+       , "dataroot_NOISY":  "../data/new_position_scene"
+       // , "GT_size": 512
+     }
+    
+  }
+
+  , "path": {
+    "root": "/home/bingyi/AdvMCDenoise/"
+    ,"val_root": "/home/bingyi/AdvMCDenoise/"
+    //FINAL
+     ,"pretrain_model_G": "../experiments/tungsten_diffuse/models/opt_G.pth"
+
+  }
+
+  , "network_G": {
+    "which_model_G": "generator_cfm"
+  }
+
+
+  
+}

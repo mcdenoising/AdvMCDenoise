@@ -1,0 +1,86 @@
+{
+  "name": "diffuse_new" //  please remove "debug_" during training
+  , "use_tb_logger": true
+  , "model": "seperate_cfm_gan"
+  , "image_type": "exr"
+  , "scale": 4
+  , "gpu_ids": [0]
+  , "datasets": {
+
+    "train": {
+      "name": "train_Disney_feature_denoise"
+      , "mode": "Disney_feature_denoise_diffuse"
+      , "feature": ["albedo","normal","depth"]
+      , "dataroot_GT": "../data/new_ref_whole"
+      , "dataroot_NOISY": "../data/new_feature_whole"
+      , "subset_file": null
+      , "use_shuffle": true
+      , "n_workers": 8
+      , "batch_size": 8
+      , "GT_size": 128
+      , "use_flip": true
+      , "use_rot": true
+    }
+    , "val": {
+
+      "name": "val_Disney_feature_Denoise"
+      , "mode": "Disney_feature_denoise_diffuse"
+      , "dataroot_GT": "../data/new_ref_whole"
+      , "dataroot_NOISY": "../data/new_feature_whole"
+      // , "GT_size": 256
+    
+    }
+    
+  }
+
+  , "path": {
+    "root": "/home/bingyi/AdvMCDenoise/"
+    ,"val_root": "/home/bingyi/AdvMCDenoise/"
+   // , "resume_state": "training_state/340000.state"
+    // , "pretrain_model_G": "../experiments/pretrained_models/opt_G.pth"
+  }
+
+  , "network_G": {
+    "which_model_G": "generator_cfm"
+  }
+  , "network_D": {
+    "which_model_D": "discriminator_vgg_128"// "dis_acd"
+    , "norm_type": "batch"
+    , "act_type": "leakyrelu"
+    , "mode": "CNA"
+    , "nf": 64
+    , "in_nc": 3
+  }
+
+  , "train": {
+    "lr_G": 1e-6
+    , "weight_decay_G": 0
+    , "beta1_G": 0.9
+    , "lr_D": 1e-4
+    , "weight_decay_D": 0
+    , "beta1_D": 0.9
+    , "lr_scheme": "MultiStepLR"
+    , "lr_steps": [50000, 100000, 150000, 200000]
+    , "lr_gamma": 0.5
+    , "pixel_criterion": "l1"
+    , "pixel_weight": 1
+    , "feature_criterion": "l1"
+    , "feature_weight": 0
+    , "gan_type": "wgan-gp"
+    , "gan_weight": 5e-3
+
+    //for wgan-gp
+    , "D_update_ratio": 1
+    , "D_init_iters": 0
+    , "gp_weigth": 10
+
+    , "manual_seed": 0
+    , "niter": 6e5
+    , "val_freq": 5e3
+  }
+
+  , "logger": {
+    "print_freq": 200
+    , "save_checkpoint_freq": 5e3
+  }
+}
