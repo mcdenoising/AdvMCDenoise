@@ -11,7 +11,7 @@ Some preprocessing code for Tungsten scenes credits to Disney [KPCN](http://cvc.
 We provide two set of model weights. 
 "./experiment/kjl/models/opt_XX.pth" is trained from KJL large indoor room datasets without seperating Specular and Diffuse components. You can finetune the weigths to your own dataset based on this pretrained weights.
 
-"./experiments/tungsten_diffuse/models/opt_XX.pth" and "./experiments/tungsten_specular/models/opt_XX.pth" are trained on [Tungsten](https://github.com/tunabrain/tungsten) scenes. 
+"./experiments/tungsten_diffuse/models/opt_XX.pth" and "./experiments/tungsten_specular/models/opt_XX.pth" are finetuned on [Tungsten](https://github.com/tunabrain/tungsten) scenes. 
 
 
 
@@ -20,8 +20,8 @@ We provide two set of model weights.
 # data
 **data** dir can be downloaded from [googledrive](https://www.google.com)
 
-This directory provides sample data from some scenes on Tungsten scenes.
-This directory also provides the utility scripts to do data processing, for example, to process EXR files, Tungsten data pre-processing ect..
+This directory contain some samples from Tungsten scenes.
+It also provides the utility scripts to do data processing, for example, to process EXR files, Tungsten data pre-processing ect..
 
 Large scale indoor dataset from Kujiale.com will be published soon.
 
