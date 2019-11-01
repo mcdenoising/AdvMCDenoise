@@ -5,7 +5,7 @@ Some preprocessing code for Tungsten scenes credits to Disney [KPCN](http://cvc.
 
 
 # model weights
-**weights** dir can be downloaded from [googledrive](https://drive.google.com/open?id=1ql_ti30l4UUcLv3W_ooAp1WXpR5ibJZC)   
+**experiments** dir can be downloaded from [googledrive](https://drive.google.com/open?id=1ql_ti30l4UUcLv3W_ooAp1WXpR5ibJZC)   
 
 
 We provide two set of model weights. 
