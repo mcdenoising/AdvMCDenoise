@@ -18,7 +18,7 @@ We provide two set of model weights.
 
 
 # data
-**data** dir can be downloaded from [googledrive](https://www.google.com)
+**data** dir can be downloaded from [googledrive](https://drive.google.com/open?id=1aWCbbUqkdxvNl_VZvzomaPKFsvEfAdOw)
 
 This directory contain some samples from Tungsten scenes.
 It also provides the utility scripts to do data processing, for example, to process EXR files, Tungsten data pre-processing ect..
